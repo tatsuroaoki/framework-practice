@@ -20,7 +20,26 @@ var gators = [
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!',
     alligators: gators
+  },
+  methods: {
+    test: function(){
+      console.log("test was called")
+    },
+    filter: function(){
+      // if checkbox is checked
+      if(document.getElementById("icecream").checked){
+        // set this.alligators to only likesIceCream === true
+        this.alligators = gators.filter(g => g.likesIceCream)
+      } else {
+        // all alligators
+        this.alligators = gators
+      }
+    }
   }
 })
+
+
+
+
+
