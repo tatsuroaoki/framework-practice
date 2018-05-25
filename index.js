@@ -41,6 +41,20 @@ var app = new Vue({
     },
     sortDesc: function(){
       this.alligators = gators.sort(function(a, b){return b.weight - a.weight})
+    },
+    buildGator: function(){
+      console.log("buildGator")
+      // create an alligator object from form input values
+      var newG = {
+        name: document.querySelector("#name").value,
+        hobbies: document.querySelector("#hobbies").value,
+        weight: document.querySelector("#weight").value,
+        imgSource: document.querySelector("#imgSource").value,
+        likesIceCream: document.querySelector("#likesIceCream").checked
+      }
+
+      // push it into array of gators
+      this.alligators.push(newG)
     }
   }
 })

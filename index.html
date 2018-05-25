@@ -24,6 +24,23 @@
       <br>
       <button v-on:click="sortDesc()">Sort by Weight, Descending</button>
 
+      <form v-on:submit="buildGator()" v-on:submit.prevent>
+        Name:
+        <input type="text" id="name">
+        Hobbies:
+        <input type="text" id="hobbies">
+        Weight:
+        <input type="text" id="weight">
+        Image Source:
+        <input type="text" id="imgSource">
+        Likes Ice Cream:
+        <input type="checkbox" id="likesIceCream">
+
+        <input type="submit">
+      </form>
+
+
+
     </div>
 
     <section class="profile-container">
