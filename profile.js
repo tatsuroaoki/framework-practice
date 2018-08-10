@@ -26,7 +26,22 @@ document.addEventListener("DOMContentLoaded", function() {
 	let profileListings = new Vue({
 		el: '#profileListings',
 		data: {
-			profiles: gators
+			profiles: gators,
+			icecreamOnly: false
+		},
+		methods: {
+			iceCreamFilter: function() {
+
+				// if checkbox is checked:
+				if(this.icecreamOnly) {
+					this.profiles = gators.filter(function(element){
+						return element.likesIceCream
+					})
+				} else {
+					// else
+					this.profiles = gators
+				}
+			}
 		}
 	})
-	})
+	})																							
